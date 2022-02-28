@@ -10,7 +10,7 @@ public class LogAnalyzer
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
-
+    
     /**
      * Create an object to analyze hourly web accesses.
      */
@@ -46,6 +46,21 @@ public class LogAnalyzer
         for(int hour = 0; hour < hourCounts.length; hour++) {
             System.out.println(hour + ": " + hourCounts[hour]);
         }
+    }
+    
+    /**Here I am trying to get the busiest hour from that data list
+     * I am only getting the return value as of now and not the actual hour the return value is from.
+     */
+    public void busiestHour()
+    {
+        int largest = -1000, index = 0;
+        for(int hour = 0; hour < hourCounts.length; hour++){
+            if(hourCounts[hour] > largest){
+                largest = hourCounts[hour];
+                index = largest;
+            }
+        }
+        System.out.println("Busiest Hour: " + index);
     }
     
     /**
