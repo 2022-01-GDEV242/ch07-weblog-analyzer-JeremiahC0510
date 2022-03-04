@@ -48,8 +48,13 @@ public class LogAnalyzer
         }
     }
     
-    /**Here I am trying to get the busiest hour from that data list
-     * I am only getting the return value as of now and not the actual hour the return value is from.
+    /**
+     * busiestHour is looking for the largest amount of accesses for a specific hour of the day.
+     * I am using a while loop to run through the hourCounts array.
+     * I have three variables, largest is the return variable and tracks the hourCounts that the largest amount of accesses happened.
+     * Index is the variable that is keeping track of each indexed count based off the if else parameters.
+     * Count is the variable that updates each time the while loop runs it makes sure that the if statement is updating so that the 
+     * hourCounts[index] has to be larger than it. It's getting rid of every other option.
      */
     public void busiestHour()
     {
@@ -67,6 +72,12 @@ public class LogAnalyzer
         System.out.println("Busiest Hour: " + largest);
     }
     
+    /**
+     * Using similar features from busiestHour() quietest hour is looking for the hour during the day where there was the least
+     * amount of accesses to the weblog Analyzer.
+     * Using a while loop to get through the array, count variable is updating the if statement, index is keeping track of the
+     * access according to the hours and smallest is the return of the hour with the smalles amount of accesses.
+     */
     public void quietestHour()
     {
         int smallest = 0, index = 0, count = 1000;
@@ -82,6 +93,14 @@ public class LogAnalyzer
         System.out.println("Quietest Hour: " + smallest);
     }
     
+    /**
+     * twoHourBusiest is looking for the largest amount of accesses per 2 hours of the day. So there is 12 possibilities.
+     * Using a while loop to get through the array. Similar to busiest hour index is the variable that is keeping track of each 
+     * indexed count based off the if else parameters. 
+     * Count is the variable that updates each time the while loop runs it makes sure that the if statement is updating so that 
+     * the hourCounts[index] has to be larger than it. It's getting rid of every other option.
+     * Largest is the return variable and tracks the hourCounts that the largest amount of accesses happened.
+     */
     public void twoHourBusiest()
     {
         int largest = 0, index = 0, count = -1000;   
