@@ -53,16 +53,50 @@ public class LogAnalyzer
      */
     public void busiestHour()
     {
-        int largest = -1000, index = 0;
-        for(int hour = 0; hour < hourCounts.length; hour++){
-            if(hourCounts[hour] > largest){
-                largest = hourCounts[hour];
-                index = largest;
+        int largest = 0, index = 0, count = -1000;
+        
+        while(index < hourCounts.length -1){
+            if(count < hourCounts[index]){
+                largest = index;
+                count = hourCounts[index];
+                index++;
             }
+            else
+                index++;
         }
-        System.out.println("Busiest Hour: " + index);
+        System.out.println("Busiest Hour: " + largest);
     }
     
+    public void quietestHour()
+    {
+        int smallest = 0, index = 0, count = 1000;
+        while(index < hourCounts.length -1){
+            if(count > hourCounts[index]){
+                smallest = index;
+                count = hourCounts[index];
+                index++;
+            }
+            else
+                index++;
+        }
+        System.out.println("Quietest Hour: " + smallest);
+    }
+    
+    public void twoHourBusiest()
+    {
+        int largest = 0, index = 0, count = -1000;   
+        while(index < hourCounts.length - 1){
+            if (count < hourCounts[index] + hourCounts[index + 1]){
+                largest = index;
+                count = hourCounts[index] + hourCounts[index + 1];
+                index++;
+            }
+            else {
+                index++;
+            }
+            }
+        System.out.println("Two Hour Busiest: " + largest + "-" + (largest+2));
+    }          
     /**
      * Print the lines of data read by the LogfileReader
      */
