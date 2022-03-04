@@ -1,8 +1,8 @@
 /**
  * Read web server data and analyse hourly access patterns.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version    2016.02.29
+ * @author  Jeremiah Curtis
+ * @version 03.04.2022
  */
 public class LogAnalyzer
 {
@@ -49,6 +49,14 @@ public class LogAnalyzer
     }
     
     /**
+     * Print the lines of data read by the LogfileReader
+     */
+    public void printData()
+    {
+        reader.printData();
+    }
+    
+    /**WHAT I ADDED!!!!
      * busiestHour is looking for the largest amount of accesses for a specific hour of the day.
      * I am using a while loop to run through the hourCounts array.
      * I have three variables, largest is the return variable and tracks the hourCounts that the largest amount of accesses happened.
@@ -72,7 +80,7 @@ public class LogAnalyzer
         System.out.println("Busiest Hour: " + largest);
     }
     
-    /**
+    /**WHAT I ADDED!!!!
      * Using similar features from busiestHour() quietest hour is looking for the hour during the day where there was the least
      * amount of accesses to the weblog Analyzer.
      * Using a while loop to get through the array, count variable is updating the if statement, index is keeping track of the
@@ -93,7 +101,7 @@ public class LogAnalyzer
         System.out.println("Quietest Hour: " + smallest);
     }
     
-    /**
+    /**WHAT I ADDED!!!!
      * twoHourBusiest is looking for the largest amount of accesses per 2 hours of the day. So there is 12 possibilities.
      * Using a while loop to get through the array. Similar to busiest hour index is the variable that is keeping track of each 
      * indexed count based off the if else parameters. 
@@ -116,11 +124,4 @@ public class LogAnalyzer
             }
         System.out.println("Two Hour Busiest: " + largest + "-" + (largest+2));
     }          
-    /**
-     * Print the lines of data read by the LogfileReader
-     */
-    public void printData()
-    {
-        reader.printData();
-    }
 }
