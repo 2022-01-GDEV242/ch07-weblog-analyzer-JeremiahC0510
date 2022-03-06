@@ -124,4 +124,18 @@ public class LogAnalyzer
             }
         System.out.println("Two Hour Busiest: " + largest + "-" + (largest+2));
     }          
+    
+    /**WHAT I ADDED!!!!
+     * numberofAccesses counts the total number of accesses made.
+     * Using a for loop to get through the hourCounts array we add
+     * to int accesses each time. 
+     */
+    public void numberofAccesses()
+    {
+        int accesses = 0;
+        for(int i = 0; i < hourCounts.length; i++){
+            accesses = accesses + hourCounts[i];
+        }
+        System.out.println("Total # of Accesses: " + accesses);
+    }
 }
