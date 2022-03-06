@@ -260,4 +260,31 @@ public class LogAnalyzer
         }
         System.out.println("Quietest Month: " + smallest);
     }
+    /**WHAT I ADDED!!!!
+     * totalAccessesPerMonth is taking the accesses of each
+     * month and adding them all up.
+     */
+    public void totalAccessesPerMonth()
+    {
+        int accesses = 0;
+        for(int month = 1; month < monthCounts.length; month++)
+        {
+            accesses = accesses + monthCounts[month];
+        }
+        System.out.println("Total # of Accesses: " + accesses);
+    }
+    /**WHAT I ADDED!!!!
+     * averageAccessesPerMonth is taking the average of the
+     * accesses of all the months.
+     */
+    public void averageAccessesPerMonth()
+    {
+        int total = 12, sum = 0, average = 0;
+        for(int month = 1; month < monthCounts.length; month++)
+        {
+            sum = monthCounts[month] + sum;
+            average = sum / total;
+        }
+        System.out.println("Average Per Month: " + average);
+    }
 }
